@@ -32,7 +32,7 @@ prepare_install() {
                 exit 1
             fi
         fi
-
+        python -m pip install --upgrade setuptools
         $py -m venv .venv
         . .venv/bin/activate
         python -m ensurepip
@@ -43,7 +43,6 @@ prepare_install() {
         python -m pip install -r requirements.txt
         python -m pip uninstall torch torchvision torchaudio -y
         python -m pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
-        python -m pip install --upgrade setuptools
         finish
     fi
 }
