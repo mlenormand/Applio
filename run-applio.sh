@@ -6,4 +6,4 @@ printf "\033]0;Applio\007"
  export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
  
 clear
-python app.py --open &
+nohup python app.py --open > app.log 2>&1 &
